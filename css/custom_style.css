@@ -1,0 +1,280 @@
+body{
+    overflow-x: hidden;
+}
+
+.change-bg{
+    background-color: rgb(24, 24, 24);
+}
+
+.navbar-brand img{
+    height: 4rem;
+}
+.navbar{
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+}
+.nav-item{
+    padding: 1rem;
+}
+
+.navbar-nav{
+    display: none;
+}
+
+
+.hamburger,.navbar-toggler{
+    width: 3rem;
+    height: 3rem;
+    background-color:blue;
+    border-radius: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.change-nav-display{
+    display: flex;
+    transition: all 0.8s ease;
+    animation: animate1 0.7s ease;
+}
+@keyframes animate1{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+/* @media only screen and (min-width: 1000px){ */
+    .circle{
+        position: fixed;
+        background-color: blue;
+        z-index: -1;
+        clip-path: circle(10px at 96% 7%);
+        -webkit-clip-path: circle(10px at 96% 7%);
+        transition: all 1s ease;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+@media only screen and (min-width: 1000px){
+    .circle.open{
+        width: 100%;
+        height: 100vh;
+        clip-path: circle(1040px at 90% -10%);
+        -webkit-clip-path: circle(1040px at 90% -10%);
+    }
+}
+    
+    .nav-link{
+        color: white!important;
+    }
+/* } */
+
+
+.lines{
+    width:1.4rem;
+    height: 0.2rem;
+    background-color: white!important;
+    margin: 2px;
+    transition: all 0.5s ease;
+}
+
+
+
+@media only screen and (max-width: 1000px){
+    .hamburger{
+        display: none;
+    }
+    /* .circle{
+        display: none;
+    } */
+    .navbar-nav{
+        display: flex;
+    }
+    .navbar{
+        background-color: blue!important;
+    }
+    .circle.open{
+        width: 100%;
+        height: 100vh;
+        clip-path: circle(705px at 90% -10%);
+        -webkit-clip-path: circle(705px at 90% -10%);
+    }
+    .white{
+        color: black;
+    }
+    .mouse-cursor{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 725px){
+    .circle{
+        display: none;
+    }
+    .white{
+        color: black!important;
+    }
+    .about{
+        backdrop-filter: blur(40px);
+        background-color: rgba(0, 0, 255, 0.9);
+        color: white;
+    }
+    
+}
+@media only screen and (min-width: 725px) and (max-width:1600px){
+    .about{
+        margin-top: 150px!important;
+        /* border: 2px solid black; */
+        background:rgba(107, 87, 255, 0.2);
+        backdrop-filter: blur(40px);
+        color: white!important;
+    }
+}
+/* Rotate first bar */
+
+.change #line1 {
+    /* -webkit-transform: rotate(-45deg) translate(-9px, 6px) ; */
+    transform: translateY(8px) rotate(-45deg);
+  }
+  
+  /* Fade out the second bar */
+  .change #line2 {
+    opacity: 0;
+  }
+  
+  /* Rotate last bar */
+  .change #line3 {
+    /* -webkit-transform: rotate(45deg) translate(-8px, -8px) ; */
+    transform: translateY(-8px) rotate(45deg)  ;
+  }
+  .change{
+    transform: rotate(270deg);
+}
+
+.cunt{
+    width: 100%;
+    height: 200vh;
+    background-color: rgb(172, 172, 238);
+}
+
+
+.para{
+    font-family: 'Bungee Inline', cursive;
+    color: black!important;
+    font-size: 80px;
+    pointer-events: none;
+}
+.make-white{
+    animation: animate2 1s ease;
+    color: white;
+}
+
+@media only screen and (max-width: 1200px){
+    .para{
+        font-size: 60px;
+    }
+}
+
+.mouse-cursor{
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 100px;
+    background:rgba(215, 211, 255, 0.2);
+    backdrop-filter: blur(40px);
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    transition: all 0s ease-in-out;
+}
+.nav-link{
+    transition: all 0.7s ease-in-out;
+}
+
+.link-grow{
+    transform: scale(1.4);
+    transition: all 0.7s ease;
+}
+
+.head{
+    pointer-events: none;
+    transition: all 1s ease;
+}
+
+
+
+
+
+
+
+
+
+/* about styling starts here */
+
+
+.bar{
+    background-color:white;
+    width: 3rem;
+    height: 2px;
+}
+.under-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.type-text{
+    /* border: 2px solid black; */
+    height: 3rem;
+}
+
+.my-btn{
+    color: white!important;
+    background:rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+.my-btn a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+/* services styling starts here */
+
+.services{
+    background: url('../bg/1.jpg');
+    background-attachment: fixed;
+    width: 100%;
+    /* -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%); */
+    color: white!important;
+}
+.cards{
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    height: 14rem;
+    transition: all 0.5s ease;
+}
+
+.fas{
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+}
+.cards:hover{
+    /* background-color: rgba(28, 0, 187, 0.2); */
+    backdrop-filter: blur(0px);
+    /* background: transparent; */
+    transform: scale(1.04);
+    cursor: pointer;
+}
