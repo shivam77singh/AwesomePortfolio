@@ -59,7 +59,10 @@ $('.hamburger').click(function () {
     }
     else {
         remove();
-        remove_white();
+        let bg = document.querySelector('.change-bg');
+        if (!bg) {
+            remove_white();
+        }
         white_developer();
     }
 });
@@ -102,11 +105,11 @@ $('.slider').click(function () {
             remove_white();
             white_developer();
         }
-        else{
+        else {
             blue_developer();
         }
     }
-   
+
 });
 
 
