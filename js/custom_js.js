@@ -1,4 +1,16 @@
 
+function color() {
+    let open = document.querySelector('.open');
+    let bg = document.querySelector('.change-bg');
+
+    if (open || bg) {
+        $('.developer').css('opacity', '0');
+    }
+    else {
+        $('.developer').css('opacity', '1');
+    }
+}
+
 
 function open() {
     $('.circle').addClass('open');
@@ -45,7 +57,6 @@ function remove() {
 // hamburger click events
 
 $('.hamburger').click(function () {
-
     setTimeout(() => {
         $('.navbar-nav').toggleClass('change-nav-display');
     }, 300);
@@ -55,7 +66,7 @@ $('.hamburger').click(function () {
     if (change) {
         open();
         make_white();
-        blue_developer();
+        // blue_developer();
     }
     else {
         remove();
@@ -65,6 +76,7 @@ $('.hamburger').click(function () {
         }
         white_developer();
     }
+    color();
 });
 
 
@@ -79,8 +91,9 @@ window.addEventListener('scroll', () => {
     if (!bg) {
         open();
         make_white();
-        blue_developer();
+        // blue_developer();
     }
+    color();
 
 });
 
@@ -106,9 +119,10 @@ $('.slider').click(function () {
             white_developer();
         }
         else {
-            blue_developer();
+            // blue_developer();
         }
     }
+    color();
 
 });
 
@@ -202,6 +216,7 @@ function erase() {
 
 
 check();
+
 
 
 
