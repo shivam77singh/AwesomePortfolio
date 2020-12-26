@@ -9,7 +9,7 @@ function make_white() {
     if (!elem) {
         setTimeout(() => {
             $('.white').addClass('make-white');
-        }, 600);
+        }, 400);
     }
 }
 
