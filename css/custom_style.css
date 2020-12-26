@@ -63,14 +63,6 @@ body{
         height: 100vh;
     }
 
-@media only screen and (min-width: 1000px){
-    .circle.open{
-        width: 100%;
-        height: 100vh;
-        clip-path: circle(1040px at 90% -10%);
-        -webkit-clip-path: circle(1040px at 90% -10%);
-    }
-}
     
     .nav-link{
         color: white!important;
@@ -88,56 +80,10 @@ body{
 
 
 
-@media only screen and (max-width: 1000px){
-    .hamburger{
-        display: none;
-    }
-    /* .circle{
-        display: none;
-    } */
-    .navbar-nav{
-        display: flex;
-    }
-    .navbar{
-        background-color: blue!important;
-    }
-    .circle.open{
-        width: 100%;
-        height: 100vh;
-        clip-path: circle(705px at 90% -10%);
-        -webkit-clip-path: circle(705px at 90% -10%);
-    }
-    .white{
-        color: black;
-    }
-    .mouse-cursor{
-        display: none;
-    }
-}
 
-@media only screen and (max-width: 725px){
-    .circle{
-        display: none;
-    }
-    .white{
-        color: black!important;
-    }
-    .about{
-        backdrop-filter: blur(40px);
-        background-color: rgba(0, 0, 255, 0.9);
-        color: white;
-    }
-    
-}
-@media only screen and (min-width: 725px) and (max-width:1600px){
-    .about{
-        margin-top: 150px!important;
-        /* border: 2px solid black; */
-        background:rgba(107, 87, 255, 0.2);
-        backdrop-filter: blur(40px);
-        color: white!important;
-    }
-}
+
+
+
 /* Rotate first bar */
 
 .change #line1 {
@@ -177,23 +123,40 @@ body{
     color: white;
 }
 
-@media only screen and (max-width: 1200px){
-    .para{
-        font-size: 60px;
-    }
-}
 
 .mouse-cursor{
     position: absolute;
     width: 170px;
     height: 170px;
     border-radius: 100px;
-    background:rgba(215, 211, 255, 0.2);
+    background:rgba(25, 0, 255, 0.4);
     backdrop-filter: blur(40px);
     z-index: -1;
     transform: translate(-50%, -50%);
     transition: all 0s ease-in-out;
+    pointer-events: none;
 }
+
+
+
+.developer{
+    /* border: 2px solid black; */
+    font-family: 'Bungee Inline', cursive;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    z-index: -1;
+    font-size: 12rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 20px 20px 20px rgba(175, 175, 175, 0.5);
+    transition: all 2s ease;
+    width: 100%;
+    /* border: 2px solid black; */
+    /* color: rgba(0, 13, 199, 0.7);
+    text-shadow: 10px 10px 7px rgba(100, 102, 255, 0.5); */
+    
+}
+
 .nav-link{
     transition: all 0.7s ease-in-out;
 }
@@ -277,4 +240,114 @@ body{
     /* background: transparent; */
     transform: scale(1.04);
     cursor: pointer;
+}
+
+
+
+
+
+
+/* media queries */
+
+@media only screen and (min-width: 725px) and (max-width:1900px){
+    .about{
+        margin-top: 150px!important;
+        /* border: 2px solid black; */
+        background:rgba(107, 87, 255, 0.2);
+        backdrop-filter: blur(40px);
+        color: white!important;
+    }
+}
+
+
+@media only screen and (max-width: 1200px){
+    .para{
+        font-size: 60px;
+    }
+    .developer{
+        font-size: 9rem;
+        left: 20%;
+    }
+}  
+
+
+
+
+
+@media only screen and (max-width: 1000px){
+    .hamburger{
+        display: none;
+    }
+    /* .circle{
+        display: none;
+    } */
+    .navbar-nav{
+        display: flex;
+    }
+    .navbar{
+        background-color: blue!important;
+    }
+    .circle.open{
+        width: 100%;
+        height: 100vh;
+        clip-path: circle(705px at 90% -10%);
+        -webkit-clip-path: circle(705px at 90% -10%);
+    }
+    .white{
+        color: black;
+    }
+    .mouse-cursor{
+        display: none;
+    }
+    .developer{
+        font-size: 8rem;
+        left: 20%;
+        top: 35%;
+        text-shadow: 20px 20px 20px rgba(134, 134, 134, 0.7);
+    }
+}
+
+
+
+
+@media only screen and (min-width: 1000px){
+    .circle.open{
+        width: 100%;
+        height: 100vh;
+        clip-path: circle(1040px at 90% -10%);
+        -webkit-clip-path: circle(1040px at 90% -10%);
+    }
+}
+
+@media only screen and (max-width:800px){
+    .developer{
+        font-size: 6rem;
+    }
+}
+
+
+@media only screen and (max-width: 725px){
+    .circle{
+        display: none;
+    }
+    .white{
+        color: black!important;
+    }
+    .about{
+        backdrop-filter: blur(40px);
+        background-color: rgba(0, 0, 255, 0.9);
+        color: white;
+    }
+    .developer{
+        font-size: 5rem;
+        color: rgba(255, 255, 255, 0.7);
+        text-shadow: 20px 20px 20px rgba(134, 134, 134, 0.7);
+    }
+    
+}
+
+
+
+.home-image{
+   opacity: 0.9;
 }
