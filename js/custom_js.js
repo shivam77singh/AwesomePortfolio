@@ -1,8 +1,10 @@
 
 
-
-function change() {
+function open() {
     $('.circle').addClass('open');
+}
+
+function make_white() {
     let elem = document.querySelector('.make-white');
     if (!elem) {
         setTimeout(() => {
@@ -11,6 +13,36 @@ function change() {
     }
 }
 
+function remove_white() {
+    $('.white').removeClass('make-white');
+}
+
+function white_developer() {
+    $('.developer').css(
+        {
+            'color': 'rgba(255, 255, 255, 0.7)',
+            'text- shadow': '20px 20px 20px rgba(175, 175, 175, 0.5)'
+        }
+    )
+}
+
+function blue_developer() {
+    $('.developer').css(
+        {
+            'color': 'rgba(0, 13, 199, 0.7)',
+            'text-shadow': '10px 10px 7px rgba(100, 102, 255, 0.5)'
+        }
+    )
+}
+
+function remove() {
+    $('.circle').removeClass('open');
+}
+
+
+
+
+// hamburger click events
 
 $('.hamburger').click(function () {
 
@@ -18,8 +50,65 @@ $('.hamburger').click(function () {
         $('.navbar-nav').toggleClass('change-nav-display');
     }, 300);
     $('.hamburger').toggleClass('change');
-    change();
+    let change = document.querySelector('.change');
+
+    if (change) {
+        open();
+        make_white();
+        blue_developer();
+    }
+    else {
+        remove();
+        remove_white();
+        white_developer();
+    }
 });
+
+
+
+
+
+// scroll events
+
+window.addEventListener('scroll', () => {
+    let dist = window.scrollY;
+    let bg = document.querySelector('.change-bg');
+    if (!bg) {
+        open();
+        make_white();
+        blue_developer();
+    }
+
+});
+
+
+
+//  toggle effect
+
+$('.slider').click(function () {
+    // change();
+    let bg = document.querySelector('.change-bg');
+    let open = document.querySelector('.open');
+    if (!bg) {
+        $('body').addClass('change-bg');
+        $('.head').css('color', 'white');
+        make_white();
+        white_developer();
+    }
+    else {
+        $('body').removeClass('change-bg');
+        $('.head').css('color', 'black');
+        if (!open) {
+            remove_white();
+            white_developer();
+        }
+        else{
+            blue_developer();
+        }
+    }
+   
+});
+
 
 
 
@@ -58,16 +147,6 @@ $('.hamburger').mouseleave(() => {
 
 
 
-
-
-
-window.addEventListener('scroll', () => {
-    let dist = window.scrollY;
-    let elem = document.querySelector('.make-white');
-    if (dist >= 40 && !elem && window.innerWidth > 725) {
-       change();
-    }
-});
 
 
 
@@ -124,17 +203,3 @@ check();
 
 
 
-//  toggle effect
-let f=0;
-$('.slider').click(function () {
-    change();
-    let bg = document.querySelector('.change-bg');
-    if(!bg){
-        $('body').addClass('change-bg');
-        $('.head').css('color', 'white');
-    }
-    else{
-        $('body').removeClass('change-bg');
-        $('.head').css('color', 'black');
-    }
-});
