@@ -190,7 +190,7 @@ body{
 .under-text{
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 
@@ -293,9 +293,7 @@ body{
         clip-path: circle(705px at 90% -10%);
         -webkit-clip-path: circle(705px at 90% -10%);
     }
-    .white{
-        color: black;
-    }
+    
     .mouse-cursor{
         display: none;
     }
@@ -305,6 +303,27 @@ body{
         top: 35%;
         text-shadow: 20px 20px 20px rgba(134, 134, 134, 0.7);
     }
+    .info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* margin-top: 4rem; */
+    }
+    .info1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+    .info1 p{
+        text-align: center;
+    }
+    
+    
+    
+    
 }
 
 
@@ -330,9 +349,9 @@ body{
     .circle{
         display: none;
     }
-    .white{
+    /* .white{
         color: black!important;
-    }
+    } */
     .about{
         backdrop-filter: blur(40px);
         background-color: rgba(0, 0, 255, 0.9);
@@ -350,4 +369,29 @@ body{
 
 .home-image{
    opacity: 0.9;
+}
+.info{
+    /* display: flex;
+    flex-direction: column; */
+    /* border: 2px solid black; */
+}
+.info1,.cards ul{
+    /* margin-top: 1rem; */
+    /* border: 2px solid black; */
+    margin-bottom: 2rem;
+    /* margin-left: 1rem; */
+    width: 25rem;
+    letter-spacing: 0.02rem;
+    line-height: 1.4rem;
+    font-family: 'Roboto Mono', sans-serif;
+    
+}
+.cards>h5{
+    letter-spacing: 0.02rem;
+    line-height: 1.4rem;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 600;
+}
+.info1>p{
+    font-size: 14px;
 }
