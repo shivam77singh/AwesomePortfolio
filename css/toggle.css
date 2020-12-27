@@ -1,11 +1,11 @@
 /* The switch - the box around the slider */
 .switch {
-    position: fixed;
+    position: absolute;
     display: inline-block;
     width: 55px;
     height: 27px;
-    top: 20%;
-    left: 10px;
+    top: 15%;
+    left: 16px;
     z-index: 7;
   }
   
