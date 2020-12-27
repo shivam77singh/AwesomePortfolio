@@ -340,7 +340,8 @@ body{
 
 @media only screen and (max-width:800px){
     .developer{
-        font-size: 6rem;
+        /* left: 7%; */
+        font-size: 5rem;
     }
 }
 
@@ -358,10 +359,15 @@ body{
         color: white;
     }
     .developer{
-        font-size: 5rem;
+        left: 5%;
+        font-size: 3rem;
         color: rgba(255, 255, 255, 0.7);
         text-shadow: 20px 20px 20px rgba(134, 134, 134, 0.7);
     }
+    .about, .services{
+        width: 90%;
+    }
+    
     
 }
 
