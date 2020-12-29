@@ -326,6 +326,7 @@ body{
         margin-left: 4rem;
         top: 13rem;
         left: 4rem;
+        display:flex;
     }
     .about-container{ grid-template-columns: 1fr; margin: 2rem;color: black; letter-spacing: 1px; }
     .about-head{ grid-column: 1; }
