@@ -26,6 +26,7 @@ if (window.innerWidth > 1000) {
 const about = document.querySelector('.about-container');
 const about_img = document.querySelector('.about-image');
 window.addEventListener('scroll', () => {
+    $('.circle').css('top', `${window.scrollY}px`);
     let windX = window.innerWidth;
     let windY = window.innerHeight;
     let mouseX = ((windX / 2) - window.scrollY) / 40;
