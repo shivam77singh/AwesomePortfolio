@@ -59,19 +59,21 @@ h1,h2,h3,h4,p,h5,.navbar{ overflow: hidden; }
 }
 .nav-links li{ 
     margin-right: 1.4rem;
-    padding: 0.5rem;
+    padding: 0.7rem 1rem;
     font-size: 1rem;
     color: rgb(255, 255, 255);
-}
-.nav-links li:hover{
-    background-color: rgb(6, 176, 255);
-    transform: translateY(-5px);
-    overflow:hidden;
+    border-radius: 10px;
+    transition: all 0.4s ease;
 }
 .nav-links li a{
     text-decoration: none;
     letter-spacing: 2.5px;
     cursor: pointer;
+}
+.nav-links li:hover{
+    background-color: rgb(6, 176, 255);
+    transform: translateY(-5px);
+    overflow:hidden;
 }
 
 
@@ -331,7 +333,7 @@ body{
         margin-left: 4rem;
         top: 13rem;
         left: 4rem;
-        display:flex;
+        display: flex;
     }
     .about-container{ grid-template-columns: 1fr; margin: 2rem;color: black; letter-spacing: 1px; }
     .about-head{ grid-column: 1; }
