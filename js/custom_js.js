@@ -1,138 +1,14 @@
-console.log(window.innerWidth)
-
-function color() {
-    let open = document.querySelector('.open');
-    let bg = document.querySelector('.change-bg');
-
-    if (open || bg) {
-        $('.developer').css('opacity', '0');
+// <====menu open & close====>
+document.querySelector('.menu').addEventListener('click', () => {
+    if (document.querySelector('.nav-links').style.top === '-1000px') {
+        document.querySelector('.nav-links').style.top = '5rem';
     }
     else {
-        $('.developer').css('opacity', '1');
+        document.querySelector('.nav-links').style.top = '-1000px';
     }
-    if (window.innerWidth < 725 && !bg) {
-        $('.developer').css('opacity', '1');
-    }
-}
-
-
-function open() {
-    $('.circle').addClass('open');
-}
-
-function make_white() {
-    let elem = document.querySelector('.make-white');
-    if (!elem) {
-        setTimeout(() => {
-            $('.white').addClass('make-white');
-        }, 400);
-    }
-}
-
-function remove_white() {
-    $('.white').removeClass('make-white');
-}
-
-function white_developer() {
-    $('.developer').css(
-        {
-            'color': 'rgba(255, 255, 255, 0.7)',
-            'text- shadow': '20px 20px 20px rgba(175, 175, 175, 0.5)'
-        }
-    )
-}
-
-
-function remove() {
-    $('.circle').removeClass('open');
-}
-
-
-
-
-// hamburger click events
-
-$('.hamburger').click(function () {
-    setTimeout(() => {
-        $('.navbar-nav').toggleClass('change-nav-display');
-    }, 300);
-    $('.hamburger').toggleClass('change');
-    let change = document.querySelector('.change');
-
-    if (change) {
-        open();
-        make_white();
-        // blue_developer();
-    }
-    else {
-        remove();
-        let bg = document.querySelector('.change-bg');
-        if (!bg) {
-            remove_white();
-        }
-        white_developer();
-    }
-    color();
 });
 
-
-
-
-
-// scroll events
-
-window.addEventListener('scroll', () => {
-    let dist = window.scrollY;
-    let bg = document.querySelector('.change-bg');
-    if (!bg) {
-        open();
-        if (window.innerWidth > 725) {
-            make_white();
-        }
-        // blue_developer();
-    }
-    color();
-
-
-});
-
-
-
-//  toggle effect
-
-$('.slider').click(function () {
-    // change();
-    let bg = document.querySelector('.change-bg');
-    let open = document.querySelector('.open');
-    if (!bg) {
-        $('body').addClass('change-bg');
-        $('.head').css('color', 'white');
-        make_white();
-        white_developer();
-    }
-    else {
-        $('body').removeClass('change-bg');
-        $('.head').css('color', 'black');
-        if (!open) {
-            remove_white();
-            white_developer();
-        }
-        else {
-            // blue_developer();
-        }
-        if (window.innerWidth < 725) {
-            remove_white();
-            $('.developer').css('opacity', '1');
-        }
-    }
-    color();
-
-});
-
-
-
-
-
+// <===mouse cursor===>
 
 if (window.innerWidth > 1000) {
 
@@ -142,85 +18,128 @@ if (window.innerWidth > 1000) {
         mouse_cursor.style.top = e.pageY + 'px';
         mouse_cursor.style.left = e.pageX + 'px';
     }
-
-    let nav_link = document.querySelectorAll('.nav-link');
-    nav_link.forEach(link => {
-        link.addEventListener('mouseleave', () => {
-            link.classList.remove('link-grow');
-        });
-    });
-    nav_link.forEach(link => {
-        link.addEventListener('mouseover', () => {
-            link.classList.add('link-grow');
-        });
-    });
-
-    $('.hamburger').mouseenter(() => {
-        $('.hamburger').addClass('link-grow');
-    });
-    $('.hamburger').mouseleave(() => {
-        $('.hamburger').removeClass('link-grow');
-    });
-
 }
 
 
+// <<=====about, skilss, projects =====>>
 
+const about = document.querySelector('.about-container');
+const about_img = document.querySelector('.about-image');
+window.addEventListener('scroll', () => {
+    let windX = window.innerWidth;
+    let windY = window.innerHeight;
+    let mouseX = ((windX / 2) - window.scrollY) / 40;
+    let mouseY = ((windY / 2) - window.scrollY) / 70;
+    if (window.innerWidth <= 900) {
+        mouseY /= 12;
+        mouseX /= 12;
+    }
+    console.log(scrollY);
+    if (scrollY <= 730) { about.style.transform = `rotateX(${-mouseX}deg) rotateY(${mouseY}deg)`; }
+    about.style.transition = 'all 0.2s ease';
 
-
-
-
-
-
-
-// writing effect
-
-
-const texts = ["Designer", "Developer", "Nooob"];
-let id = 0;
-let str_id = 0;
-let str = "";
-function check() {
-    if (str.length < texts[id].length) {
-        setTimeout(type, 120);
+    if (scrollY >= 1900) {
+        $('.project1').css(
+            {
+                'transform': 'skewX(-15deg)'
+            }
+        )
+        $('.project2').css(
+            {
+                'transform': 'skewX(-15deg)'
+            }
+        )
+        $('.project3').css(
+            {
+                'transform': 'skewX(-15deg)'
+            }
+        )
     }
     else {
-        if (str_id === texts[id].length) {
-            setTimeout(erase, 500);
-        }
-        else {
-            setTimeout(erase, 60);
-        }
-
+        $('.project1').css(
+            {
+                'transform': 'translateX(900px) skewX(-15deg)'
+            }
+        )
+        $('.project2').css(
+            {
+                'transform': 'translateX(-900px) skewX(-15deg)'
+            }
+        )
+        $('.project3').css(
+            {
+                'transform': 'translateX(900px) skewX(-15deg)'
+            }
+        )
     }
-}
 
+    if (window.innerWidth > 900) {
 
-function type() {
-    str += texts[id][str_id];
-    document.querySelector('.type-effect').innerHTML = str;
-    // console.log(str);
-    str_id++;
-    check();
-}
+        let cards = document.getElementsByClassName('skills-card');
+        let t = 0;
+        for (let i = 0; i < 3; i++) {
 
-function erase() {
-    {
-        document.querySelector('.type-effect').innerHTML = str.substr(0, str_id - 1);
-        str_id--;
-        if (str_id === 0) {
-            str = '';
-            id++;
-            id %= 3;
+            if (t + 1180 < scrollY) {
+                if (i > 0) {
+                    cards[i - 1].style.cssText = "transform: none;background-color: rgba(172, 173, 255, 0.4);"
+                }
+                cards[i].style.cssText = "transform: translate3d(-20px, -20px, -70px) scale(1.3);background-color: rgb(89, 167, 255);"
+            }
+            else {
+                cards[i].style.cssText = "transform: none;background-color: rgba(172, 173, 255, 0.4);"
+            }
+            t += 270;
+
         }
-        check();
     }
+});
+
+
+
+
+// <<======projects and carousal hover effect===>>
+
+const projects = [".project1", ".project2", ".project3"];
+const carousals = [".news", ".music", ".portfolio"];
+
+
+function mouseenter(i) {
+    let project = document.querySelector(`${projects[i]}`);
+    let carousal = document.querySelector(`${carousals[i]}`);
+
+    project.addEventListener('mouseenter', () => {
+        window.addEventListener('mousemove', (e) => {
+            carousal.style.opacity = '0.9';
+            carousal.style.left = `${e.pageX - 100}px`;
+            carousal.style.top = `${e.pageY - 270}px`;
+            carousal.style.transition = 'all 0s ease';
+        });
+
+    });
+    project.addEventListener('mouseleave', () => {
+        window.addEventListener('mousemove', (e) => {
+            carousal.style.opacity = '0';
+            carousal.style.left = '-100px';
+            carousal.style.transition = 'all 0.2s ease';
+        });
+    });
+
+}
+
+for (let i = 0; i < 3; i++) {
+    mouseenter(i);
 }
 
 
-check();
 
+// <<===scroll into view===>>
 
+let pages = [".home-container", ".about-container", ".skills-page", ".projects-page"];
+let links = $('.nav-links li');
 
-
-
+for (let i = 0; i < 4; i++) {
+    let page = document.querySelector(`${pages[i]}`)
+    links[i].addEventListener('click', () => {
+        page.scrollIntoView();
+    });
+}
